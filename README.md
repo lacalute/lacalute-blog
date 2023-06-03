@@ -1,2 +1,3 @@
-# lacalute-blog
-The personal blog written in Python + JS 
+# Lacalute Blog
+The personal blog written in Python + JS + MongoDB.
+
