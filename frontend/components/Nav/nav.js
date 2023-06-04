@@ -16,7 +16,7 @@ export const Navigation = () => {
           <Image src={VK} width={25} height={25}/>
         </a>
         <a className='link' href="https://t.me/nieresa" target="_blank"><BsTelegram size={23}/></a>
-        <a className='link' href="/about">About</a>
+        <a className='link' href="/about">Обо мне</a>
       </div>
     </div>
   )  

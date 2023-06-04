@@ -9,6 +9,42 @@ body {
   margin: 0 auto;
 }
 
+.continue {
+  text-align: center;
+  .continue_text {
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 40px;
+    font-family: 'SF Pro Display';
+  }
+}
+
+/* About page */
+.about-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-1.text {
+  display: block;
+  margin-left: 40px;
+  font-family: 'SF Pro Display';
+  .bottom {
+    font-size: 17px;
+  }
+  .title {
+    font-family: 'SF Pro Display';
+    font-weight: black;
+  }
+}
+
+.img_about{
+  width: 340px;
+  height: auto;
+}
+
+
 @media screen and (max-width: 980px) {
   body {
     padding: 0;
@@ -19,6 +55,33 @@ body {
   .container {
     max-width: 500px;
     margin: 0 auto;
+  }
+
+  .img_about{
+    width: 200px;
+    height: auto;
+  }
+  .about-1.text {
+    display: block;
+    margin-left: 40px;
+    font-family: 'SF Pro Display';
+    .bottom {
+      font-size: 15px;
+    }
+    .title {
+      font-size: 16px;
+      font-family: 'SF Pro Display';
+      font-weight: black;
+    }
+  }
+  .my_blog {
+    font-size: 22px;
+  }
+  .continue {
+    .continue_text {
+      font-size: 17px;
+
+    }
   }
 }
 @media screen and (max-width: 650px) {
@@ -32,7 +95,32 @@ body {
     max-width: 400px;
     margin: 0 auto;
   }
+  .img_about{
+    width: 200px;
+    height: auto;
+  }
+  .about-1.text {
+    display: block;
+    margin-left: 40px;
+    font-family: 'SF Pro Display';
+    .bottom {
+      font-size: 13px;
+    }
+    .title {
+      font-size: 15px;
+      font-family: 'SF Pro Display';
+      font-weight: black;
+    }
+  }
+  .my_blog {
+    font-size: 19px;
+  }
+  .continue {
+    .continue_text {
+      font-size: 15px;
 
+    }
+  }
 }
 @media screen and (max-width: 400px) {
   body {
@@ -44,5 +132,33 @@ body {
   .container {
     max-width: 300px;
     margin: 0 auto;
+    padding: 0 10px;
+  }
+  .img_about{
+    width: 130px;
+    height: auto;
+  }
+  .about-1.text {
+    display: block;
+    margin-left: 13px;
+    
+    font-family: 'SF Pro Display';
+    .bottom {
+      font-size: 10px;
+    }
+    .title {
+      font-size: 13px;
+      font-family: 'SF Pro Display';
+      font-weight: black;
+    }
+  }
+  .my_blog {
+    font-size: 16px;
+  }
+  .continue {
+    .continue_text {
+      font-size: 13px;
+
+    }
   }
 }
