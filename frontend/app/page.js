@@ -7,6 +7,7 @@ import { Footer } from '../components/Footer/footer';
 import { useState, useEffect } from 'react';
 
 
+
 export default function Home() {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState({id: '', title: '', date: '', text: ''});
