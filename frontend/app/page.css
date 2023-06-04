@@ -21,3 +21,16 @@ body {
     margin: 0 auto;
   }
 }
+@media screen and (max-width: 650px) {
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'SF Pro Display';
+  }
+
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+}
