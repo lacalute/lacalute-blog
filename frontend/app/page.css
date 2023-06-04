@@ -34,3 +34,15 @@ body {
   }
 
 }
+@media screen and (max-width: 400px) {
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'SF Pro Display';
+  }
+
+  .container {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
