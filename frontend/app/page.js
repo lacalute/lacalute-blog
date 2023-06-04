@@ -28,7 +28,7 @@ export default function Home() {
     <>
       <h1>Посты</h1>
       <div>
-        {data.map(post => <Post id={post._id} date={post.date} title={post.title} />)}
+        {data.reverse().map(post => <Post id={post._id} date={post.date} title={post.title} />)}
       </div>
     </>
   )
