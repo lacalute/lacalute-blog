@@ -1,0 +1,18 @@
+.post_link {
+  text-decoration: none;
+}
+.post_title {
+  margin: 0px;
+  font-size: 22px;
+  color: #000;
+}
+.post_title:hover {
+  color: #929292;
+  transition: all 0.2s ease-out;
+}
+
+.post_date {
+  margin: 20px 0 0 0;
+  font-weight: normal;
+  color: #808080;
+}

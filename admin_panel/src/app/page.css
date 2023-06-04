@@ -1,0 +1,75 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'SF Pro Display';
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  border-bottom: 2px solid #000;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  .link {
+    text-decoration: none;
+    color: #000;
+    margin-left: 20px;
+    
+  }
+
+}
+
+.create_post {
+  margin-bottom: 50px;
+  .post_input {
+    font-family: 'SF Pro Display';
+    outline: none;
+    display: block;
+    margin-bottom: 20px;
+    width: 500px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 17px;
+  
+  }
+  .post_input:focus {
+    border: 1px solid rgb(161, 161, 255);
+  }
+
+  .input_text {
+    margin-bottom: 2px;
+  }
+  
+  
+}
+
+.post_submit {
+  font-family: 'SF Pro Display';
+  width: 200px;
+  height: 40px;
+  border: 1px solid #000;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.post_submit:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
