@@ -10,9 +10,9 @@ class CRUD:
     }
     posts_col.insert_one(post)
 
-  def delete_post(self, title):
+  def delete_post(self, id):
     post = {
-      'title': title
+      '_id': ObjectId(id)
     }
     posts_col.delete_one(post)
 

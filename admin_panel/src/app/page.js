@@ -3,11 +3,13 @@ import './page.css'
 import React, { useEffect, useState } from "react";
 import useSWR from 'swr'
 import { Pop } from '../../components/Pop/pop';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export function Create() {
-  const [values, setValues] = useState({ title: '', date: '', text: '' })
-
+  const [values, setValues] = useState({ id: 'string', title: '', date: '', text: '' })
+  const notify = (msg) =>toast(msg)
   const submitHandler = e => {
     e.preventDefault()
     console.log(JSON.stringify(values))
@@ -18,8 +20,10 @@ export function Create() {
       },
       body: JSON.stringify(values),
     })
+    window.location.reload()
+    // setValues({id: '' ,title:'' , date: '', text:''})
+    notify('Пост опубликован!')
   }
-
   return (
   <form method='post' onSubmit={submitHandler}>
     <h4 className='input_text'>Название поста</h4>
@@ -27,8 +31,9 @@ export function Create() {
     <h4 className='input_text'>Дата публикации</h4>
     <input className='post_input' required value={values.date} onChange={e => setValues({ ...values, date: e.target.value })} id='date' type='date' />
     <h4 className='input_text'>Текст поста</h4>
-    <input className='post_input' required value={values.text} onChange={e => setValues({ ...values, text: e.target.value })} id='text' type='text' />
-    <button className='post_submit' type='submit'>Опубликовать</button>
+    <textarea className='post_input text' required value={values.text} onChange={e => setValues({ ...values, text: e.target.value })} id='text' type='text'></textarea>
+    <button className='post_submit'  type='submit'>Опубликовать</button>
+    <ToastContainer />
   </form>
   )
 }
@@ -36,24 +41,58 @@ export function Create() {
 
 
 export function Delete() {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error } = useSWR('http://localhost:8000/posts', fetcher);
-  
+  const [postId, setPostId] = useState('')
+  const notify = (msg) =>toast(msg)
+  const fetcher = (...args) => fetch(...args).then(res => res.json())
+  const { data, error } = useSWR('http://localhost:8000/posts', fetcher)
+
+  const deleteHandler = () => {
+    if (postId) {
+      // fetch запрос на удаление
+      fetch('http://localhost:8000/delete', {
+        method: 'POST',
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+          "title": "string",
+          "date": "string",
+          "text": "string",
+          "id": postId
+        })
+      
+    })
+
+      window.location.reload()
+      console.log(postId)
+      notify('Пост удален!')
+    }
+  }
+
   if (data != undefined) {
-    console.log(data)
     return (
       <>
-      <div className='pops'>
-        {data.map(item => <Pop key={item._id} id={item._id} title={item.title} date={item.date} />)}
-      </div>
-      <button className='post_submit'>Удалить</button>
+        <div className="pops">
+          {data.map(item => (
+            <Pop
+              key={item._id}
+              postId={postId}
+              setPostId={setPostId}
+              id={item._id}
+              title={item.title}
+              date={item.date}
+            />
+          ))}
+        </div>
+        <button onClick={deleteHandler}  className="post_submit">
+          Удалить
+        </button>
       </>
     )
   }
-  
 }
-
 export default function Home() {
+
   return (
     <div className='container'>
       <div className='nav'>

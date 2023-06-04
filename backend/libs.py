@@ -3,11 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from pymongo.mongo_client import MongoClient
 from pydantic import BaseModel
 import pprint
+from bson.objectid import ObjectId
 app = FastAPI()
 class Post(BaseModel):
   title: str
   date: str
   text: str 
+  id: str
 admin_login = 'admin'
 admin_password = 'pass123'
 origins = ["*"]

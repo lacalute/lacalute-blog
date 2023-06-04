@@ -15,8 +15,8 @@ def create_post(post: Post):
 async def delete_post(post: Post):
   try:
     crud = CRUD()
-    crud.delete_post(post.title)
-    return "OK"
+    crud.delete_post(post.id)
+    return 'OK'
   except:
     return 'BAD'
   

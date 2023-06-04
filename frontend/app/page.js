@@ -4,13 +4,25 @@ import './page.css'
 import { Navigation } from '../components/Nav/nav';
 import { Post } from '../components/Post/post';
 import { Footer } from '../components/Footer/footer';
+import { useState, useEffect } from 'react';
+
 
 export default function Home() {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error } = useSWR('http://localhost:8000/posts', fetcher);
- 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState({id: '', title: '', date: '', text: ''});
+  useEffect(() => {
+    setLoading(true);
+    fetch('http://localhost:8000/posts')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (!data) return <p>No profile data</p>;
+
   return (
     <>
       <h1>Посты</h1>

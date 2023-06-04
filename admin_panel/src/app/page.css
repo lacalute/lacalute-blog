@@ -54,6 +54,10 @@ body {
     margin-bottom: 2px;
   }
   
+  .post_input.text {
+    width: 1170px;
+    height: 300px;
+  }
   
 }
 
