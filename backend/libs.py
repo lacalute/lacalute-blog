@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pymongo.mongo_client import MongoClient
 from pydantic import BaseModel
-import pprint
 from bson.objectid import ObjectId
 app = FastAPI()
 class Post(BaseModel):
