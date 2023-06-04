@@ -12,7 +12,7 @@ export default function Home() {
   const [isLoading, setLoading] = useState({id: '', title: '', date: '', text: ''});
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:8000/posts')
+    fetch('https://blog-backend-9war.onrender.com/posts')
       .then((res) => res.json())
       .then((data) => {
         setData(data);

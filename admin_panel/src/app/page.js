@@ -13,7 +13,7 @@ export function Create() {
   const submitHandler = e => {
     e.preventDefault()
     console.log(JSON.stringify(values))
-    fetch('http://localhost:8000/create', {
+    fetch('https://blog-backend-9war.onrender.com/create', {
       method: 'POST',
       headers: {
         "Content-type": "application/json"
@@ -44,12 +44,12 @@ export function Delete() {
   const [postId, setPostId] = useState('')
   const notify = (msg) =>toast(msg)
   const fetcher = (...args) => fetch(...args).then(res => res.json())
-  const { data, error } = useSWR('http://localhost:8000/posts', fetcher)
+  const { data, error } = useSWR('https://blog-backend-9war.onrender.com/posts', fetcher)
 
   const deleteHandler = () => {
     if (postId) {
       // fetch запрос на удаление
-      fetch('http://localhost:8000/delete', {
+      fetch('https://blog-backend-9war.onrender.com/delete', {
         method: 'POST',
         headers: {
           "Content-type": "application/json"

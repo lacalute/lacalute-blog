@@ -5,7 +5,7 @@ import useSWR from 'swr';
 export const Page = (ide) => {
   
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error } = useSWR(`http://localhost:8000/post/${ide.ide}`, fetcher);
+  const { data, error } = useSWR(`https://blog-backend-9war.onrender.com/post/${ide.ide}`, fetcher);
   if (data != undefined) {
     console.log(data);
     return (
