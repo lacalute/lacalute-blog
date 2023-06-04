@@ -6,6 +6,7 @@ import '../components/Footer/footer.css'
 import '../components/Nav/nav.css'
 import './page.css'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {

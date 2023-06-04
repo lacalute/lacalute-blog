@@ -5,7 +5,7 @@ import useSWR from 'swr'
 import { Pop } from '../../components/Pop/pop';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import EditorJS from '@editorjs/editorjs';
 
 export function Create() {
   const [values, setValues] = useState({ id: 'string', title: '', date: '', text: '' })
@@ -33,6 +33,7 @@ export function Create() {
     <h4 className='input_text'>Текст поста</h4>
     <textarea className='post_input text' required value={values.text} onChange={e => setValues({ ...values, text: e.target.value })} id='text' type='text'></textarea>
     <button className='post_submit'  type='submit'>Опубликовать</button>
+    
     <ToastContainer />
   </form>
   )

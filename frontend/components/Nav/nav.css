@@ -5,6 +5,7 @@
   height: 60px;
   align-items: center;
   justify-content: space-between;
+  font-family: 'SF Pro Display';
   .logo {
     text-decoration: none;
     font-size: 20px;

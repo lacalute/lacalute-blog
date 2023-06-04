@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@editorjs/editorjs": "^2.27.0",
     "react-toastify": "^9.1.3"
   }
 }

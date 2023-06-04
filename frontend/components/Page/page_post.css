@@ -1,12 +1,18 @@
+
+
 .page_title {
   margin: 30px 0 0 0;
+  font-family: 'SF Pro Display';
 }
 
 .page_date {
   margin: 5px 0 0 0;
   font-weight: normal;
   color: #6e6e6e;
+  font-family: 'SF Pro Display';
 }
 .page_text {
   margin: 30px 0 0 0;
+  font-size: 18px;
+  font-family: 'SF Pro Display';
 }
