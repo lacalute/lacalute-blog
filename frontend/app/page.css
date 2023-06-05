@@ -39,11 +39,10 @@ body {
   }
 }
 
-.img_about{
+.img_about {
   width: 340px;
   height: auto;
 }
-
 
 @media screen and (max-width: 980px) {
   body {
@@ -57,7 +56,7 @@ body {
     margin: 0 auto;
   }
 
-  .img_about{
+  .img_about {
     width: 200px;
     height: auto;
   }
@@ -80,7 +79,6 @@ body {
   .continue {
     .continue_text {
       font-size: 17px;
-
     }
   }
 }
@@ -95,7 +93,7 @@ body {
     max-width: 400px;
     margin: 0 auto;
   }
-  .img_about{
+  .img_about {
     width: 200px;
     height: auto;
   }
@@ -118,7 +116,6 @@ body {
   .continue {
     .continue_text {
       font-size: 15px;
-
     }
   }
 }
@@ -134,14 +131,14 @@ body {
     margin: 0 auto;
     padding: 0 10px;
   }
-  .img_about{
+  .img_about {
     width: 130px;
     height: auto;
   }
   .about-1.text {
     display: block;
     margin-left: 13px;
-    
+
     font-family: 'SF Pro Display';
     .bottom {
       font-size: 10px;
@@ -158,7 +155,22 @@ body {
   .continue {
     .continue_text {
       font-size: 13px;
-
     }
+  }
+}
+
+.animation {
+  position: relative;
+  top: 50px;
+
+  animation: animateTop infinite alternate forwards;
+  animation-timing-function: ease-in-out;
+  animation-duration: 600ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes animateTop {
+  to {
+    top: 0;
   }
 }

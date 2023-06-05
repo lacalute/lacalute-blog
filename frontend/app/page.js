@@ -18,12 +18,13 @@ export default function Home() {
       })
   }, [])
 
-  if (isLoading) return <Loader />
+  // if (isLoading) return <Loader />
 
   return (
     <>
       <h1>Посты</h1>
-      <div>
+      {isLoading && <Loader />}
+      <div className="animation">
         {data &&
           data
             .reverse()

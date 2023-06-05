@@ -7,6 +7,8 @@
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+  position: relative;
+  top: -100px;
 }
 
 @keyframes rotation {
@@ -23,7 +25,6 @@
   width: 100%;
   position: absolute;
   inset: 0;
-  /* background-color: #48397772; */
   display: flex;
   align-items: center;
   justify-content: center;

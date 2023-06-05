@@ -6,7 +6,7 @@ export default function About() {
   return (
     <>
       <h1 className="my_blog">Это мой блог</h1>
-      <div className="about-1">
+      <div className="about-1 animation">
         <Image src={about_img} alt="about" className="img_about" />
         <div className="about-1 text">
           <h1 className="title">Меня зовут Ярослав Королев</h1>

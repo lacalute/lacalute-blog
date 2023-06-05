@@ -24,7 +24,7 @@ export const Page = ide => {
     <>
       <h1 className="page_title">{data?.title}</h1>
       <h4 className="page_date">{data?.date}</h4>
-      <p className="page_text">{data?.text}</p>
+      <p className="page_text animation">{data?.text}</p>
     </>
   )
 }
