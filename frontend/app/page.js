@@ -1,38 +1,34 @@
-"use client";
-import useSWR from 'swr';
+'use client'
+import { useEffect, useState } from 'react'
+import { Loader } from '../components/Loader/Loader'
+import { Post } from '../components/Post/post'
+import { BASE_URL } from './api'
 import './page.css'
-import { Navigation } from '../components/Nav/nav';
-import { Post } from '../components/Post/post';
-import { Footer } from '../components/Footer/footer';
-import { useState, useEffect } from 'react';
-
-
 
 export default function Home() {
-  const [data, setData] = useState(null);
-  const [isLoading, setLoading] = useState({id: '', title: '', date: '', text: ''});
+  const [data, setData] = useState(null)
+  const [isLoading, setLoading] = useState(false)
   useEffect(() => {
-    setLoading(true);
-    fetch('https://blog-backend-9war.onrender.com/posts')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, []);
+    setLoading(true)
+    fetch(`${BASE_URL}/posts`)
+      .then(res => res.json())
+      .then(data => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!data) return <p>No profile data</p>;
+  if (isLoading) return <Loader />
 
   return (
     <>
       <h1>Посты</h1>
       <div>
-        {data.reverse().map(post => <Post id={post._id} date={post.date} title={post.title} />)}
+        {data &&
+          data
+            .reverse()
+            .map(post => <Post key={post._id} id={post._id} date={post.date} title={post.title} />)}
       </div>
     </>
   )
 }
-
-
-

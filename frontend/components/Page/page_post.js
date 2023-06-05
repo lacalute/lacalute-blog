@@ -1,22 +1,30 @@
-'use client';
+'use client'
+import { useState, useEffect } from 'react'
+import { Loader } from '../Loader/Loader'
+import { BASE_URL } from '../../app/api/index'
 import './page_post.css'
-import useSWR from 'swr';
 
-export const Page = (ide) => {
-  
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error } = useSWR(`https://blog-backend-9war.onrender.com/post/${ide.ide}`, fetcher);
-  if (data != undefined) {
-    console.log(data);
-    return (
-      <>
-      <h1 className='page_title'>{data.title}</h1>
-      <h4 className='page_date'>{data.date}</h4>
-      <p className='page_text'>{data.text}</p>
-      </>
-     
-    )  
-  }
-  
+export const Page = ide => {
+  const [data, setData] = useState(null)
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch(`${BASE_URL}/post/${ide.ide}`)
+      .then(res => res.json())
+      .then(data => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+
+  if (isLoading) return <Loader />
+
+  return (
+    <>
+      <h1 className="page_title">{data?.title}</h1>
+      <h4 className="page_date">{data?.date}</h4>
+      <p className="page_text">{data?.text}</p>
+    </>
+  )
 }
-
